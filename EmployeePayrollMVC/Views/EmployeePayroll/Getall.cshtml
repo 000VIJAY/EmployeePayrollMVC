@@ -4,11 +4,8 @@
     ViewData["Title"] = "Getall";
 }
     <div id="view-all">
-<h1>All Employee Information</h1>
+<h1 class="text-center">All Employee Information</h1>
 
-<p>
-    <a asp-action="Add">Add New Employee</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -30,7 +27,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.StartedDate)
             </th>
-            <th></th>
+            <th> <a asp-action="Add" class="btn btn-success text-white">Add New Employee</a></th>
         </tr>
     </thead>
     <tbody>
@@ -55,9 +52,9 @@
                 @Html.DisplayFor(modelItem => item.StartedDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="GetByEmployeeId" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Remove" asp-route-id="@item.EmployeeId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId" class="btn btn-info text-white"><i class="fas fa-pencil"></i>Edit</a> 
+                <a asp-action="GetByEmployeeId" asp-route-id="@item.EmployeeId" class="btn btn-info text-white">Details</a> 
+                <a asp-action="Remove" asp-route-id="@item.EmployeeId" class="btn btn-danger text-white">Delete</a>
             </td>
         </tr>
 }

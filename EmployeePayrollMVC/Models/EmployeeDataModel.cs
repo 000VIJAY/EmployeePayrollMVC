@@ -18,6 +18,7 @@ namespace EmployeePayrollMVC.Models
         public string Department { get; set; }
         public int Salary { get; set; }
         [DisplayName("Start Date")]
+        [DisplayFormat(DataFormatString ="{0:dd-MM-yyyy}")]
         public DateTime StartedDate { get; set; }
     }
 }

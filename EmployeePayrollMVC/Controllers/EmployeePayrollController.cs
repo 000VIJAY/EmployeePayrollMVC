@@ -1,5 +1,6 @@
 ﻿using EmployeePayrollMVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,12 @@ namespace EmployeePayrollMVC.Controllers
     public class EmployeePayrollController : Controller
     {
         EmployeePayrollDbContext _dbContext;
+        IConfiguration _configuration;
         
-        public EmployeePayrollController(EmployeePayrollDbContext dbContext)
+        public EmployeePayrollController(EmployeePayrollDbContext dbContext, IConfiguration configuration)
         {
             _dbContext = dbContext;
+            _configuration = configuration; 
             
         }
 
@@ -151,7 +154,7 @@ namespace EmployeePayrollMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int Id ,[Bind("EmployeeId,FirstName,LastName,Age,Department,Salary")] EmployeeDataModel employeeDataModel)
+        public IActionResult Edit(int Id , EmployeeDataModel employeeDataModel)
         {
             try
             {

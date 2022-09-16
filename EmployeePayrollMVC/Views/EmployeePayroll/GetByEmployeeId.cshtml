@@ -4,10 +4,8 @@
     ViewData["Title"] = "GetByEmployeeId";
 }
 
-<h1>GetByEmployeeId</h1>
-
 <div>
-    <h4>EmployeeDataModel</h4>
+    <h3 class="btn btn-info">Employee Details</h3>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -49,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.EmployeeId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.EmployeeId"class="btn btn-info btn-block"><i class="fas fa-pencil"></i>Edit</a> 
     <a asp-action="Getall">Back to List</a>
 </div>
